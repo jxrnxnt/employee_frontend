@@ -1,0 +1,8 @@
+<h1>Project von uns, weil wir sind cool</h1>
+<ul>
+  <li *ngFor="let e of employees$ | async">
+    {{e.lastName }}, {{e.firstName}}
+  </li>
+</ul>
+<app-navbar></app-navbar>
+<app-list></app-list>

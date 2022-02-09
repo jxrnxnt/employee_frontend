@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  overflow: hidden;
+  background: #fff;
+  transition: 3s;
+
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+  background-size: 400% 400%;
+  background-image: linear-gradient(-45deg, #343434, #767676, #afafaf);
+  animation: 12s myGradient infinite;
+  border-radius: 40px;
+  box-shadow: 2px 2px 10px #ff8282;
+}
+
+@keyframes myGradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50%{
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.active {
+  transition: 1s;
+}
+
+.active1 {
+  transition: 1s;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 20px;
+  font-family: verdana;
+  font-weight: lighter;
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.navigation {
+  position: absolute;
+  transform: translate(0%, 0%);
+  top: 8%;
+  left: 3%;
+}
+.active:hover {
+  color: #ff3131;
+  animation: 1.5s myFlash linear infinite;
+  text-shadow: 2px 2px 30px #ff3131;
+  transition: 2s;
+}
+
+.active1:hover {
+  color: #ff3131;
+  animation: 1.5s myFlash linear infinite;
+  text-shadow: 2px 2px 30px #ff3131;
+  transition: 2s;
+}
+
+@keyframes myFlash{
+  0% {
+    opacity: 1;
+  }
+
+  50%{
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
