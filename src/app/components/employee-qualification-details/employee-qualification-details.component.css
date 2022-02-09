@@ -1,0 +1,85 @@
+div.title {
+  position: absolute;
+  top: 175px;
+  left: 1250px;
+  width: 500px;
+  height: 70px;
+
+}
+
+div.qualification-backbutton {
+  position: absolute;
+  top: 150px;
+  left: 1000px;
+  width: 800px;
+  height: 650px;
+  border: 3px solid gray;
+}
+
+div.qualification-buttons {
+  position: absolute;
+  top: 820px;
+  left: 1600px;
+  width: 200px;
+  height: 50px;
+}
+
+.button0 {
+  /*Add Button*/
+  background-color: white;
+  border: 2px solid gray;
+  color: black;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.button1 {
+  /*delete Button*/
+  background-color: white;
+  border: 2px solid gray;
+  color: black;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button2 {
+  /*back Button*/
+  background-color: white;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  color: black;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button0:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: gray; /* Green */
+  color: white;
+}
+
+.button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: gray; /* Green */
+  color: white;
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: gray; /* Green */
+  color: white;
+}
+
+li{
+  list-style: none;
+}
