@@ -1,0 +1,11 @@
+<div *ngIf="qualifications">
+  <h2>Qualification List</h2>
+  <ul class="qualifications">
+    <li *ngFor="let qualification of qualifications">
+      <button [class.selected]="qualification === selectedQualification" type="button" (click)="selectQualification(qualification)">
+        <span class="name">{{qualification.id}} {{qualification.designation}}</span>
+      </button>
+    </li>
+    <button type ="button" (click)="addQualification()">+</button>
+  </ul>
+</div>

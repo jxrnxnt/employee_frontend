@@ -1,0 +1,31 @@
+<body>
+<div class="container-fluid" *ngIf="employees">
+  <div class="row">
+    <div class="col">
+    <h2>List of Employees</h2>
+
+    <table class="table table-sm table-bordered table-striped table-hover w-auto">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Firstname</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees" (click)="selectEmployee(employee)">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.firstName}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-light" (click)="addEmployee()">Add Employee</button>
+    </div>
+    <div class="col">
+      <app-employee-details [employee]="selectedEmployee"></app-employee-details>
+    </div>
+  </div>
+</div>
+</body>
+
