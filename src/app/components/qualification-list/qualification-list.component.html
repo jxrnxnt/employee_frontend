@@ -1,11 +1,29 @@
-<div *ngIf="qualifications">
-  <h2>Qualification List</h2>
-  <ul class="qualifications">
-    <li *ngFor="let qualification of qualifications">
-      <button [class.selected]="qualification === selectedQualification" type="button" (click)="selectQualification(qualification)">
-        <span class="name">{{qualification.id}} {{qualification.designation}}</span>
-      </button>
-    </li>
-    <button type ="button" (click)="addQualification()">+</button>
-  </ul>
+<body>
+<div class="container-fluid" *ngIf="qualifications">
+  <div class="row">
+    <div class="col">
+      <h2>List of Qualifications</h2>
+
+      <table class="table table-sm table-bordered table-striped table-hover w-auto">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Designation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let qualification of qualifications" (click)="selectQualification(qualification)">
+          <th scope="row">{{qualification.id}}</th>
+          <td>{{qualification.designation}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-light" (click)="addQualification()">Add Qualification</button>
+    </div>
+    <div class="col">
+      <!-- <app-employee-by-qualification [qualification]="selectedQualification"></app-employee-by-qualification> -->
+    </div>
+  </div>
 </div>
+</body>
+

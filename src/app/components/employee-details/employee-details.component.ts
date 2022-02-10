@@ -9,15 +9,15 @@ import { Employee } from '../../models/Employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
   @Input() employee?: Employee;
+  display = "view";
   editable = false;
+  displayEmployeeQualificationDetails = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  showQualifications(employee: Employee): void {}
-  editEmployee(): void {this.editable = true}
   deleteEmployee(employee: Employee): void {}
   saveEdit(): void {}
 }
