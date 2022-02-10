@@ -1,6 +1,5 @@
-<ng-container *ngIf="!editable; then viewDetails; else editDetails"></ng-container>
-<ng-template #viewDetails>
-  <div *ngIf="employee">
+<ng-container *ngIf="employee" [ngSwitch]="display">
+  <div *ngSwitchCase="'view'">
     <h2>Employee Details</h2>
     <table class="table table-sm table-borderless w-auto">
       <tbody>
@@ -31,23 +30,21 @@
       <tr>
         <th></th>
         <td>
-          <button type="button" class="btn btn-light" (click)="showQualifications(employee)">Show Qualifications</button>
+          <button type="button" class="btn btn-light" (click)="display = 'qualifications'">Show Qualifications</button>
         </td>
       </tr>
       <tr>
         <th></th>
         <td>
-          <button type="button" class="btn btn-light" (click)="editEmployee()">Edit</button>
+          <button type="button" class="btn btn-light" (click)="display = 'edit'">Edit</button>
           <button type="button" class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-</ng-template>
 
-<ng-template #editDetails>
-  <div *ngIf="employee">
+  <div *ngSwitchCase="'edit'">
     <h2>Employee Details</h2>
     <table class="table table-sm table-borderless w-auto">
       <tbody>
@@ -103,11 +100,14 @@
         <th></th>
         <td>
           <button type="button" class="btn btn-light" (click)="saveEdit()">Save</button>
-          <button type="button" class="btn btn-light" (click)="editable = false">Cancel</button>
+          <button type="button" class="btn btn-light" (click)="display = 'view'">Cancel</button>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-</ng-template>
 
+  <div *ngSwitchCase="'qualifications'">
+    <app-employee-qualification-details></app-employee-qualification-details>
+  </div>
+</ng-container>
