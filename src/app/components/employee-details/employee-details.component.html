@@ -1,1 +1,113 @@
-<p>employee-details works!</p>
+<ng-container *ngIf="!editable; then viewDetails; else editDetails"></ng-container>
+<ng-template #viewDetails>
+  <div *ngIf="employee">
+    <h2>Employee Details</h2>
+    <table class="table table-sm table-borderless w-auto">
+      <tbody>
+      <tr>
+        <th scope="row">Firstname: </th>
+        <td>{{employee.firstName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Lastname: </th>
+        <td>{{employee.lastName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Street: </th>
+        <td>{{employee.street}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Postcode: </th>
+        <td>{{employee.postcode}}</td>
+      </tr>
+      <tr>
+        <th scope="row">City: </th>
+        <td>{{employee.city}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Phone: </th>
+        <td>{{employee.phone}}</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <button type="button" class="btn btn-light" (click)="showQualifications(employee)">Show Qualifications</button>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <button type="button" class="btn btn-light" (click)="editEmployee()">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #editDetails>
+  <div *ngIf="employee">
+    <h2>Employee Details</h2>
+    <table class="table table-sm table-borderless w-auto">
+      <tbody>
+      <tr>
+        <th scope="row">
+          <label for="employee-firstName">Firstname: </label>
+        </th>
+        <td>
+          <input id="employee-firstName" value="{{employee.firstName}}">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="employee-lastName">Lastname: </label>
+        </th>
+        <td>
+          <input id="employee-lastName" value="{{employee.lastName}}">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="employee-street">Street: </label>
+        </th>
+        <td>
+          <input id="employee-street" value="{{employee.street}}">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="employee-postcode">Postcode: </label>
+        </th>
+        <td>
+          <input id="employee-postcode" value="{{employee.postcode}}">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="employee-city">City: </label>
+        </th>
+        <td>
+          <input id="employee-city" value="{{employee.city}}">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="employee-phone">Phone: </label>
+        </th>
+        <td>
+          <input id="employee-phone" value="{{employee.phone}}">
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <button type="button" class="btn btn-light" (click)="saveEdit()">Save</button>
+          <button type="button" class="btn btn-light" (click)="editable = false">Cancel</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+

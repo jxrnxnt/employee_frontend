@@ -12,4 +12,6 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  add(): void {}
+  cancel(): void {}
 }

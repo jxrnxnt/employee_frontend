@@ -1,24 +1,19 @@
-<html lang="de" dir="ltr">
-<head>
-  <title>Navigation bar</title>
-</head>
+<title>Navigation bar</title>
 <body>
 <div class="html-container">
   <div class="navigation">
     <nav>
       <ul class="nav-type">
-        <li><a (click)="employeeClick()" class="active">Employee</a></li>
-        <li><a (click)="qualClick()" class="active1">Qualifications</a></li>
+        <li><a (click)="employeesClick()" class="active">Employee</a></li>
+        <li><a (click)="qualificationsClick()" class="active1">Qualifications</a></li>
       </ul>
     </nav>
   </div>
 </div>
 </body>
-<div id="displayEmployee" *ngIf="displayEmp">
-  <app-list></app-list>
+<div id="displayEmployees" *ngIf="displayEmployees">
+  <app-employee-list [employees]="employees"></app-employee-list>
 </div>
-<div id="displayQuali" *ngIf="displayQual">
-  <app-list></app-list>
+<div id="displayQualifications" *ngIf="displayQualifications">
+  <app-qualification-list [qualifications]="qualifications"></app-qualification-list>
 </div>
-
-</html>
