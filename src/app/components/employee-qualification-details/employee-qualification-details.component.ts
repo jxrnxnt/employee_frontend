@@ -12,4 +12,17 @@ export class EmployeeQualificationDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  AddClick(){
+    //show popup
+  }
+
+  deleteClick(){
+    //delete a Qualification freom Emplyee
+  }
+
+  backClick(){
+    //close Employee Qualifications and show Emplyee details
+  }
+
+
 }
