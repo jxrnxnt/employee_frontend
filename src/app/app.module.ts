@@ -12,6 +12,15 @@ import { AddQualificationComponent } from './components/add-qualification/add-qu
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { QualificationListComponent } from './components/qualification-list/qualification-list.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+//import { ConfirmComponent } from './dialogs/confirm/confirm.component';
+import { AddNewComponent } from './dialogs/add-new/add-new.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +31,20 @@ import { QualificationListComponent } from './components/qualification-list/qual
     AddEmployeeComponent,
     AddQualificationComponent,
     EmployeeListComponent,
-    QualificationListComponent
+    QualificationListComponent,
+    //ConfirmComponent,
+    AddNewComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
