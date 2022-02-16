@@ -1,36 +1,38 @@
 <h2>Add Employee</h2>
+<form [formGroup]="checkoutForm" (ngSubmit)="addEmployee()">
 <table class="table table-sm table-borderless w-auto">
   <tbody>
   <tr>
     <th scope="row">Firstname: </th>
-    <td><input></td>
+    <td><input id="firstname" type="text" formControlName="firstname"></td>
   </tr>
   <tr>
     <th scope="row">Lastname: </th>
-    <td><input></td>
+    <td><input id="lastname" type="text" formControlName="lastname"></td>
   </tr>
   <tr>
     <th scope="row">Street: </th>
-    <td><input></td>
+    <td><input id="street" type="text" formControlName="street"></td>
   </tr>
   <tr>
     <th scope="row">Postcode: </th>
-    <td><input></td>
+    <td><input id="postcode" type="text" formControlName="postcode"></td>
   </tr>
   <tr>
     <th scope="row">City: </th>
-    <td><input></td>
+    <td><input id="city" type="text" formControlName="city"></td>
   </tr>
   <tr>
     <th scope="row">Phone: </th>
-    <td><input></td>
+    <td><input id="phone" type="text" formControlName="phone"></td>
   </tr>
   <tr>
     <th></th>
     <td>
-      <button type="button" class="btn btn-light" (click)="addEmployee()">Add</button>
+      <button class="btn btn-light" type="submit">Add</button>
       <button type="button" class="btn btn-danger" (click)="goBack()">Cancel</button>
     </td>
   </tr>
   </tbody>
 </table>
+</form>
