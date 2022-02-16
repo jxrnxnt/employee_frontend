@@ -1,1 +1,28 @@
-<p>employee-by-qualification works!</p>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2>Employee by Qualification</h2>
+      <table class="table table-sm table-bordered table-striped table-hover w-auto">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">lastName</th>
+          <th scope="col">firstName</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let employee of employees">
+          <th scope="row">{{employee.id}}</th>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.firstName}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+<ng-container *ngIf="qualification">
+  <p>still works</p>
+</ng-container>
