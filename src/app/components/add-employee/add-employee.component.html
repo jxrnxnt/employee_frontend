@@ -1,30 +1,36 @@
 <h2>Add Employee</h2>
-<div>
-  <div>
-    <label for="employee-firstName">Firstname: </label>
-    <input id="employee-firstName">
-  </div>
-  <div>
-    <label for="employee-lastName">Lastname: </label>
-    <input id="employee-lastName">
-  </div>
-  <div>
-    <label for="employee-street">Street: </label>
-    <input id="employee-street">
-  </div>
-  <div>
-    <label for="employee-postcode">Postcode: </label>
-    <input id="employee-postcode">
-  </div>
-  <div>
-    <label for="employee-city">City: </label>
-    <input id="employee-city">
-  </div>
-  <div>
-    <label for="employee-phone">Phone: </label>
-    <input id="employee-phone">
-  </div>
-
-  <button type="button" (click)="add()">Add</button>
-  <button type="button" (click)="cancel()">X</button>
-</div>
+<table class="table table-sm table-borderless w-auto">
+  <tbody>
+  <tr>
+    <th scope="row">Firstname: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th scope="row">Lastname: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th scope="row">Street: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th scope="row">Postcode: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th scope="row">City: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th scope="row">Phone: </th>
+    <td><input></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>
+      <button type="button" class="btn btn-light" (click)="add()">Add</button>
+      <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

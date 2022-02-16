@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 import { Employee } from '../../models/Employee';
+import { EmployeeService } from "../../service/employee.service";
 
 @Component({
   selector: 'app-employee-details',
@@ -8,16 +10,31 @@ import { Employee } from '../../models/Employee';
   styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent implements OnInit {
-  @Input() employee?: Employee;
+  employee: Employee | undefined;
   display = "view";
-  editable = false;
-  displayEmployeeQualificationDetails = false;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private employeeService: EmployeeService
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit(): void {
+    this.getEmployee();
+  }
+
+  getEmployee(): void {
+    //const id = this.route.params.subscribe( params => this.employeeService.getEmployee(params['id']));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.employeeService.getEmployee(id)
+      .subscribe(employee => this.employee = employee);
+
   }
 
   deleteEmployee(employee: Employee): void {}
-  saveEdit(): void {}
+  saveEdit(): void {
+    this.display = "view";
+  }
 }

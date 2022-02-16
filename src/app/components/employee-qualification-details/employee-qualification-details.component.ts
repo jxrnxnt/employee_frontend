@@ -1,35 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {DialogService} from "../../service/dialog.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-employee-qualification-details',
   templateUrl: './employee-qualification-details.component.html',
   styleUrls: ['./employee-qualification-details.component.css']
 })
-
-
 export class EmployeeQualificationDetailsComponent implements OnInit {
 
-  constructor(private dialogService: DialogService) { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
 
-  openDialog() {
-    this.dialogService.confirmDialog();
+  addQualification(): void {
   }
 
-  AddClick(){
-    //show popup
+  deleteQualification(): void {
   }
 
-  deleteClick(){
-    //delete a Qualification freom Emplyee
+  goBack(): void {
+    this.location.back();
   }
-
-  backClick(){
-    //close Employee Qualifications and show Emplyee details
-  }
-
-
 }

@@ -11,15 +11,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { AddQualificationComponent } from './components/add-qualification/add-qualification.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { QualificationListComponent } from './components/qualification-list/qualification-list.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-//import { ConfirmComponent } from './dialogs/confirm/confirm.component';
-import { AddNewComponent } from './dialogs/add-new/add-new.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,20 +23,15 @@ import { AddNewComponent } from './dialogs/add-new/add-new.component';
     AddEmployeeComponent,
     AddQualificationComponent,
     EmployeeListComponent,
-    QualificationListComponent,
-    //ConfirmComponent,
-    AddNewComponent,
+    QualificationListComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
