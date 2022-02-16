@@ -12,18 +12,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let qualification of qualifications" (click)="selectQualification(qualification)">
+        <tr *ngFor="let qualification of qualifications" routerLink="/qualifications/{{qualification.id}}">
           <th scope="row">{{qualification.id}}</th>
           <td>{{qualification.designation}}</td>
         </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-light" (click)="addQualification()">Add Qualification</button>
+      <button type="button" class="btn btn-light" mat-button (click)="addQualification()" routerLink="/qualifications/add">Add Qualification</button>
     </div>
-    <div class="col">
-      <!-- <app-employee-by-qualification [qualification]="selectedQualification"></app-employee-by-qualification> -->
-    </div>
+
+  <div class="col">
+    <router-outlet></router-outlet>
   </div>
 </div>
+</div>
 </body>
-

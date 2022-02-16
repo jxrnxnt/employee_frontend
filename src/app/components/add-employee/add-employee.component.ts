@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-add-employee',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
   }
 
-  add(): void {}
-  cancel(): void {}
+  addEmployee(): void {
+    this.goBack();
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

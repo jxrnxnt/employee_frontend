@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 
-import {Qualification} from "../../models/Qualification";
 import {QUALIFICATIONS} from "../../test-qualifications";
+import {AddQualificationComponent} from "../add-qualification/add-qualification.component";
 
 @Component({
   selector: 'app-qualification-list',
@@ -9,19 +10,16 @@ import {QUALIFICATIONS} from "../../test-qualifications";
   styleUrls: ['./qualification-list.component.css']
 })
 export class QualificationListComponent implements OnInit {
-
-  //@Input() qualifications?: Array<Qualification>;
   qualifications = QUALIFICATIONS
-  selectedQualification?: Qualification;
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
   }
 
-  selectQualification(qualification: Qualification): void {
-    this.selectedQualification = qualification;
+  addQualification(): void {
+    this.dialog.open(AddQualificationComponent, {disableClose: true});
   }
-
-  addQualification(): void {}
 }

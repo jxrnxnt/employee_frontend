@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 import { Employee } from '../../models/Employee';
@@ -26,11 +26,9 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   getEmployee(): void {
-    //const id = this.route.params.subscribe( params => this.employeeService.getEmployee(params['id']));
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.employeeService.getEmployee(id)
       .subscribe(employee => this.employee = employee);
-
   }
 
   deleteEmployee(employee: Employee): void {}

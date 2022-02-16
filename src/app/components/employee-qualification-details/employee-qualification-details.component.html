@@ -8,11 +8,10 @@
   </div>
   <div class="row">
     <div class="col-10"></div>
-    <div class="col-2">
-      <button type="button" class="btn btn-light" (click)="addQualification()">Add</button>
+    <div *ngIf="employee" class="col-2">
+      <button type="button" class="btn btn-light" mat-button (click)="addQualificationToEmployee()" routerLink="/employees/{{employee.id}}/qualifications/add">Add Qualification</button> <!-- routerLink="/employees/:id/qualifications/add" -->
       <button type="button" class="btn btn-danger" (click)="deleteQualification()">Delete</button>
     </div>
   </div>
 </div>
 </body>
-

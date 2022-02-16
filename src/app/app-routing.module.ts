@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 
-import { NavbarComponent } from "./components/navbar/navbar.component";
 import { EmployeeListComponent } from "./components/employee-list/employee-list.component";
 import { EmployeeDetailsComponent } from "./components/employee-details/employee-details.component";
 import { EmployeeQualificationDetailsComponent } from "./components/employee-qualification-details/employee-qualification-details.component";
@@ -16,7 +15,10 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent,
     children: [
       { path: ':id', component: EmployeeDetailsComponent },
-      { path: ':id/qualifications', component: EmployeeQualificationDetailsComponent },
+      { path: ':id/qualifications', component: EmployeeQualificationDetailsComponent,
+      children: [
+        { path: 'add', component: AddQualificationComponent },
+      ]},
       { path: 'add', component: AddEmployeeComponent },
     ]
   },

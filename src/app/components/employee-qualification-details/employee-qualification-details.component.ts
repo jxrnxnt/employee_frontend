@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from "@angular/common";
-import {DialogService} from "../../service/dialog.service";
+import {AddQualificationComponent} from "../add-qualification/add-qualification.component";
+import {MatDialog} from "@angular/material/dialog";
+
+import {Employee} from "../../models/Employee";
+import {EmployeeService} from "../../service/employee.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-employee-qualification-details',
@@ -10,16 +15,27 @@ import {DialogService} from "../../service/dialog.service";
 
 
 export class EmployeeQualificationDetailsComponent implements OnInit {
+  employee: Employee | undefined;
 
-  constructor(private dialogService: DialogService,
-              private location: Location
-  ) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.getEmployee();
   }
 
-  addQualification(): void {
-    this.dialogService.AddNewDialog({title: 'Add New', message: "Test message", confirmText: 'yo', cancelText: 'nope'});
+  getEmployee(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.employeeService.getEmployee(id)
+      .subscribe(employee => this.employee = employee);
+  }
+
+  addQualificationToEmployee(): void {
+    this.dialog.open(AddQualificationComponent, {disableClose: true});
   }
 
   deleteQualification(): void {
@@ -28,6 +44,4 @@ export class EmployeeQualificationDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
-
 }

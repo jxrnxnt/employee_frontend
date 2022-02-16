@@ -12,13 +12,9 @@ import { AddQualificationComponent } from './components/add-qualification/add-qu
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { QualificationListComponent } from './components/qualification-list/qualification-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import {AddNewComponent} from "./dialogs/add-new/add-new.component";
 import {MatDialogModule} from "@angular/material/dialog";
-import {MatIconModule} from "@angular/material/icon";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,17 +26,19 @@ import {MatIconModule} from "@angular/material/icon";
     AddQualificationComponent,
     EmployeeListComponent,
     QualificationListComponent,
-    AddNewComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     MatDialogModule,
-    MatIconModule
+    BrowserAnimationsModule
+  ],
+  exports: [
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

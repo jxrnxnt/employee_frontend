@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 
 import {Employee} from '../../models/Employee';
 import {EmployeeService} from "../../service/employee.service";
-import {DialogService} from "../../service/dialog.service";
+import {AddEmployeeComponent} from "../add-employee/add-employee.component";
 
 @Component({
   selector: 'app-employee-list',
@@ -11,14 +11,11 @@ import {DialogService} from "../../service/dialog.service";
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-
   employees: Employee[] = [];
-  selectedEmployee?: Employee;
 
   constructor(
-    private route: Router,
     private employeeService: EmployeeService,
-    private dialogService: DialogService
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -30,11 +27,8 @@ export class EmployeeListComponent implements OnInit {
       .subscribe(employees => this.employees = employees);
   }
 
-  selectEmployee(employee: Employee): void {
-    this.selectedEmployee = employee;
-  }
-
   addEmployee(): void {
-    this.dialogService.AddNewDialog({title: 'Add New', message: "Test message", confirmText: 'yo', cancelText: 'nope'});
+    this.dialog.open(AddEmployeeComponent, {disableClose: true});
   }
 }
+
