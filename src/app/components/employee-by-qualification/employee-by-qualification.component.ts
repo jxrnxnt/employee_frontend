@@ -26,5 +26,9 @@ export class EmployeeByQualificationComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(employees => this.employees = employees);
   }
 
+  deleteByEmployeeQulaification(): void {
+    
+  }
+
 
 }
