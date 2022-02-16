@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 
 import {Employee} from '../../models/Employee';
 import {EmployeeService} from "../../service/employee.service";
-
+import {DialogService} from "../../service/dialog.service";
 
 @Component({
   selector: 'app-employee-list',
@@ -18,6 +18,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(
     private route: Router,
     private employeeService: EmployeeService,
+    private dialogService: DialogService
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +32,9 @@ export class EmployeeListComponent implements OnInit {
 
   selectEmployee(employee: Employee): void {
     this.selectedEmployee = employee;
+  }
+
+  addEmployee(): void {
+    this.dialogService.AddNewDialog({title: 'Add New', message: "Test message", confirmText: 'yo', cancelText: 'nope'});
   }
 }
