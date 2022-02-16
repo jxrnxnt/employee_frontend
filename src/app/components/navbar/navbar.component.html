@@ -4,16 +4,10 @@
   <div class="navigation">
     <nav>
       <ul class="nav-type">
-        <li><a (click)="employeesClick()" class="active">Employee</a></li>
-        <li><a (click)="qualificationsClick()" class="active1">Qualifications</a></li>
+        <li><a routerLink="/employees" class="active">Employee</a></li>
+        <li><a routerLink="/qualifications" class="active1">Qualifications</a></li>
       </ul>
     </nav>
   </div>
 </div>
 </body>
-<div id="displayEmployees" *ngIf="displayEmployees">
-  <app-employee-list [employees]="employees"></app-employee-list>
-</div>
-<div id="displayQualifications" *ngIf="displayQualifications">
-  <app-qualification-list [qualifications]="qualifications"></app-qualification-list>
-</div>

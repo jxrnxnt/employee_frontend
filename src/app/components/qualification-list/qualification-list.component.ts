@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {Qualification} from "../../models/Qualification";
+import {QUALIFICATIONS} from "../../test-qualifications";
 
 @Component({
   selector: 'app-qualification-list',
@@ -9,7 +10,8 @@ import {Qualification} from "../../models/Qualification";
 })
 export class QualificationListComponent implements OnInit {
 
-  @Input() qualifications?: Array<Qualification>;
+  //@Input() qualifications?: Array<Qualification>;
+  qualifications = QUALIFICATIONS
   selectedQualification?: Qualification;
 
   constructor() { }

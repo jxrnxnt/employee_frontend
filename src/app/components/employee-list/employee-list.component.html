@@ -1,5 +1,5 @@
 <body>
-<div class="container-fluid" *ngIf="employees">
+<div class="container-fluid">
   <div class="row">
     <div class="col">
     <h2>List of Employees</h2>
@@ -13,19 +13,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let employee of employees" (click)="selectEmployee(employee)">
+      <tr *ngFor="let employee of employees" (click)="selectEmployee(employee)" routerLink="/employees/{{employee.id}}"> <!--(click)="selectEmployee(employee)"-->
         <th scope="row">{{employee.id}}</th>
         <td>{{employee.lastName}}</td>
         <td>{{employee.firstName}}</td>
       </tr>
       </tbody>
     </table>
-    <button type="button" class="btn btn-light" (click)="addEmployee()">Add Employee</button>
+      <button type="button" class="btn btn-light" routerLink="/employees/add">Add Employee</button>
+
     </div>
     <div class="col">
-      <app-employee-details [employee]="selectedEmployee"></app-employee-details>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
 </body>
-

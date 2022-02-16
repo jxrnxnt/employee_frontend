@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
-import { Employee } from '../../models/Employee';
+import {Employee} from '../../models/Employee';
+import {EmployeeService} from "../../service/employee.service";
+
 
 @Component({
   selector: 'app-employee-list',
@@ -9,17 +12,24 @@ import { Employee } from '../../models/Employee';
 })
 export class EmployeeListComponent implements OnInit {
 
-  @Input() employees?: Array<Employee>;
+  employees: Employee[] = [];
   selectedEmployee?: Employee;
 
-  constructor() { }
+  constructor(
+    private route: Router,
+    private employeeService: EmployeeService,
+  ) {}
 
   ngOnInit(): void {
+    this.getEmployees();
+  }
+
+  getEmployees(): void {
+    this.employeeService.getEmployees()
+      .subscribe(employees => this.employees = employees);
   }
 
   selectEmployee(employee: Employee): void {
     this.selectedEmployee = employee;
   }
-
-  addEmployee(): void {}
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-employee-qualification-details',
@@ -7,22 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeQualificationDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
 
-  AddClick(){
-    //show popup
+  addQualification(): void {
   }
 
-  deleteClick(){
-    //delete a Qualification freom Emplyee
+  deleteQualification(): void {
   }
 
-  backClick(){
-    //close Employee Qualifications and show Emplyee details
+  goBack(): void {
+    this.location.back();
   }
-
-
 }

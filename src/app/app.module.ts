@@ -11,6 +11,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { AddQualificationComponent } from './components/add-qualification/add-qualification.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { QualificationListComponent } from './components/qualification-list/qualification-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QualificationListComponent } from './components/qualification-list/qual
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,7 +30,7 @@
       <tr>
         <th></th>
         <td>
-          <button type="button" class="btn btn-light" (click)="display = 'qualifications'">Show Qualifications</button>
+          <button type="button" class="btn btn-light" routerLink="/employees/{{employee.id}}/qualifications">Show Qualifications</button>
         </td>
       </tr>
       <tr>
@@ -105,9 +105,5 @@
       </tr>
       </tbody>
     </table>
-  </div>
-
-  <div *ngSwitchCase="'qualifications'">
-    <app-employee-qualification-details></app-employee-qualification-details>
   </div>
 </ng-container>
