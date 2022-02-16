@@ -11,7 +11,7 @@ import { AddQualificationComponent } from "./components/add-qualification/add-qu
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/employees', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: 'employees', component: EmployeeListComponent,
     children: [
       { path: ':id', component: EmployeeDetailsComponent },
