@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import { Employee } from '../../models/Employee';
+import {DialogService} from "../../service/dialog.service";
 
 @Component({
   selector: 'app-employee-list',
@@ -12,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
   @Input() employees?: Array<Employee>;
   selectedEmployee?: Employee;
 
-  constructor() { }
+  constructor(private dialogService: DialogService) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,8 @@ export class EmployeeListComponent implements OnInit {
     this.selectedEmployee = employee;
   }
 
-  addEmployee(): void {}
+  addEmployee(): void {
+
+    this.dialogService.confirmDialog();
+  }
 }

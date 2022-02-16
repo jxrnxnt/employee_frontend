@@ -13,3 +13,10 @@ export class DialogService {
   }
 }
 
+export class AppComponent {
+  constructor(private dialogService: DialogService) {}
+
+  openDialog() {
+    this.dialogService.confirmDialog();
+  }
+}
