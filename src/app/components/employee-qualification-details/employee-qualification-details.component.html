@@ -2,15 +2,23 @@
 <div class="container-fluid">
   <h2>Employee Qualifications</h2>
   <div class="row">
-    <div class="col-2">
+    <div class="col-4">
       <button type="button" class="btn btn-light" (click)="goBack()">Back</button>
     </div>
   </div>
   <div class="row">
-    <div class="col-10"></div>
-    <div *ngIf="employee" class="col-2">
-      <button type="button" class="btn btn-light" mat-button (click)="addQualificationToEmployee()" routerLink="/employees/{{employee.id}}/qualifications/add">Add Qualification</button> <!-- routerLink="/employees/:id/qualifications/add" -->
-      <button type="button" class="btn btn-danger" (click)="deleteQualification()">Delete</button>
+    <div class="col-8"></div>
+    <div *ngIf="employee" class="col">
+      <table class="table table-sm table-borderless w-auto">
+        <tbody>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-light" mat-button (click)="addQualificationToEmployee()">Add Qualification</button>
+            <button type="button" class="btn btn-danger" (click)="deleteQualification()">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

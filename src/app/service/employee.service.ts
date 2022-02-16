@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
 
 import {Employee} from "../models/Employee";
 import {EMPLOYEES} from "../test-employees";
@@ -9,9 +8,7 @@ import {EMPLOYEES} from "../test-employees";
   providedIn: 'root'
 })
 export class EmployeeService {
-  constructor(
-    private route: ActivatedRoute
-  ) {}
+  constructor() {}
 
   getEmployees(): Observable<Employee[]> {
     const employees = of(EMPLOYEES);

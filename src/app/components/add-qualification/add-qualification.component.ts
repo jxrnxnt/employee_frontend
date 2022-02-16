@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add-qualification',
@@ -9,17 +10,17 @@ import { Location } from "@angular/common";
 export class AddQualificationComponent implements OnInit {
 
   constructor(
-    private location: Location
+    public dialogRef: MatDialogRef<AddQualificationComponent>
   ) { }
 
   ngOnInit(): void {
   }
 
   addQualification(): void {
-    this.goBack();
+    this.dialogRef.close();
   }
 
-  goBack(): void {
-    this.location.back();
+  cancel(): void {
+    this.dialogRef.close();
   }
 }

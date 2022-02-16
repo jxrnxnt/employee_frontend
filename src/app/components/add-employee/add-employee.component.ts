@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Location} from "@angular/common";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add-employee',
@@ -9,17 +9,17 @@ import {Location} from "@angular/common";
 export class AddEmployeeComponent implements OnInit {
 
   constructor(
-    private location: Location
-  ) { }
+    public dialogRef: MatDialogRef<AddEmployeeComponent>
+  ) {}
 
   ngOnInit(): void {
   }
 
   addEmployee(): void {
-    this.goBack();
+    this.dialogRef.close();
   }
 
-  goBack(): void {
-    this.location.back();
+  cancel(): void {
+    this.dialogRef.close();
   }
 }

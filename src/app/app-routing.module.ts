@@ -15,17 +15,12 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent,
     children: [
       { path: ':id', component: EmployeeDetailsComponent },
-      { path: ':id/qualifications', component: EmployeeQualificationDetailsComponent,
-      children: [
-        { path: 'add', component: AddQualificationComponent },
-      ]},
-      { path: 'add', component: AddEmployeeComponent },
+      { path: ':id/qualifications', component: EmployeeQualificationDetailsComponent },
     ]
   },
   { path: 'qualifications', component: QualificationListComponent,
     children: [
       { path: ':id', component: EmployeeByQualificationComponent },
-      { path: 'add', component: AddQualificationComponent },
     ]
   },
 ]

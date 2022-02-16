@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Qualification} from "../../models/Qualification";
 
 @Component({
   selector: 'app-employee-by-qualification',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-by-qualification.component.css']
 })
 export class EmployeeByQualificationComponent implements OnInit {
-
+  qualification: Qualification | undefined;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
