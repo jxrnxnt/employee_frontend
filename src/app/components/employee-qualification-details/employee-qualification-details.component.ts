@@ -15,12 +15,10 @@ export class EmployeeQualificationDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
-    this.dialogService.confirmDialog();
-  }
+
 
   AddClick(){
-    //show popup
+    this.dialogService.AddNewDialog({title: 'Add New', message: "Test message", confirmText: 'yo', cancelText: 'nope'});
   }
 
   deleteClick(){

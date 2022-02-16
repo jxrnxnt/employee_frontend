@@ -23,7 +23,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   addEmployee(): void {
-
-    this.dialogService.confirmDialog();
+    this.dialogService.AddNewDialog({title: 'Add New', message: "Test message", confirmText: 'yo', cancelText: 'nope'});
   }
 }

@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {AddNewDialogData} from "../../models/add-new-dialog-data";
 
 @Component({
   selector: 'app-add-new',
@@ -8,9 +9,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 })
 export class AddNewComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<AddNewComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: any,
-  ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: AddNewDialogData) { }
 
   ngOnInit(): void {
   }
